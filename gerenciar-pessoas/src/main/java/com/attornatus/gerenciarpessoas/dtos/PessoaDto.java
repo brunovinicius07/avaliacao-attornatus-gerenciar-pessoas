@@ -14,5 +14,6 @@ import java.util.Date;
 public class PessoaDto{
     private String nome;
     private Date dataNascimento;
+    private Long enderecoId;
 }
 
