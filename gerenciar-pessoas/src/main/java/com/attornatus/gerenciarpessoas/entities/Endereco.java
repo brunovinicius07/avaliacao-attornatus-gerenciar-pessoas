@@ -1,20 +1,20 @@
 package com.attornatus.gerenciarpessoas.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Table(name = "endereco")
 @Entity
 public class Endereco implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
