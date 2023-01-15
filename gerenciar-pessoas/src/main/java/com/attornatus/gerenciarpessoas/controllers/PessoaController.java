@@ -35,7 +35,7 @@ public class PessoaController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pessoa não encontrada");
         }
         return ResponseEntity.status(HttpStatus.OK).body(pessoa.get());
-    }
+    } 
 
 
 }
