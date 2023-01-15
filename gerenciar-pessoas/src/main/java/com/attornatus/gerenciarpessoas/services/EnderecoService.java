@@ -23,6 +23,7 @@ public class EnderecoService {
     @Autowired
     private EnderecoRepository enderecoRepository;
 
+    @Transactional
     public Endereco cadastrarEndereco(EnderecoDto enderecoDto){
         Endereco endereco = enderecoRepository.save(converteObjetoDto(enderecoDto, pessoaRepository));
         Optional<Pessoa> pessoa = pessoaRepository.findById(endereco.getPessoa().getId());
@@ -30,7 +31,7 @@ public class EnderecoService {
             List<Endereco> listaDeEndereco = new ArrayList<>();
             listaDeEndereco.add(endereco);
             Pessoa pessoaEncontrada = pessoa.get();
-            pessoaEncontrada.setEnderecos(listaDeEndereco);
+            pessoaEncontrada.setEndereco(listaDeEndereco);
             pessoaRepository.save(pessoaEncontrada);
         }
         return endereco;
