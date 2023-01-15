@@ -42,5 +42,4 @@ public class PessoaController {
         return new ResponseEntity<Pessoa>(pessoaService.editarPessoa(pessoaDto, id), HttpStatus.OK);
     }
 
-
 }
