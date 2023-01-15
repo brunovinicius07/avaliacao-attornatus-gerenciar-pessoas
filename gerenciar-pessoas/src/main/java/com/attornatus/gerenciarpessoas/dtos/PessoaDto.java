@@ -1,17 +1,15 @@
 package com.attornatus.gerenciarpessoas.dtos;
 
-import jakarta.persistence.Entity;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.Date;
 
-@Getter
-@Setter
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 public class PessoaDto{
+    @NotBlank
     private String nome;
     private Date dataNascimento;
     private Long enderecoId;
