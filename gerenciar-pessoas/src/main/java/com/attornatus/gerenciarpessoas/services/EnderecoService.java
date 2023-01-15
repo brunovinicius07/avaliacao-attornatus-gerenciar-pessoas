@@ -47,4 +47,7 @@ public class EnderecoService {
 
     }
 
+    public Optional<Endereco> buscarEndereco(Long pessoaId) {
+        return enderecoRepository.findById(pessoaId);
+    }
 }
