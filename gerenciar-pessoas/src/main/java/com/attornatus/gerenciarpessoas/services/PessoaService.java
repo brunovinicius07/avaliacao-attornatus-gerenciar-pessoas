@@ -8,6 +8,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class PessoaService {
     @Autowired
@@ -24,5 +26,9 @@ public class PessoaService {
 
     public Pessoa converteObjetoDto(PessoaDto pessoaDto, EnderecoRepository enderecoRepository){
         return  new Pessoa( pessoaDto.getNome(), pessoaDto.getDataNascimento());
+    }
+
+    public Optional<Pessoa> buscarPessoa(Long pessoaId) {
+        return pessoaRepository.findById(pessoaId);
     }
 }
