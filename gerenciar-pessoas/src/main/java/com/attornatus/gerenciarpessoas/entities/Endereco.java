@@ -1,5 +1,6 @@
 package com.attornatus.gerenciarpessoas.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,6 +30,7 @@ public class Endereco implements Serializable {
 
     private String cidade;
 
+    @JsonBackReference
     @ManyToOne
     private Pessoa pessoa;
 
