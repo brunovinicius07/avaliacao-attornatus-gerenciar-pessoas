@@ -22,7 +22,7 @@ public class PessoaService {
 
    @Transactional
     public Pessoa cadastrarPessoa(PessoaDto pessoaDto){
-        Pessoa pessoa = pessoaRepository.save(converteObjetoDto(pessoaDto,enderecoRepository));
+        Pessoa pessoa = pessoaRepository.save(converteObjetoDto(pessoaDto));
         return pessoa;
     }
 
@@ -38,23 +38,14 @@ public class PessoaService {
         pessoaRepository.save(pessoa);
         return pessoa;
     }
-    @Transactional
-    public Pessoa converteObjetoDto(PessoaDto pessoaDto, EnderecoRepository enderecoRepository){
-        Optional<Endereco> endereco = enderecoRepository.findById(pessoaDto.getEnderecoId());
-        if(endereco.isPresent()) {
+    public Pessoa converteObjetoDto(PessoaDto pessoaDto){
             return new Pessoa(pessoaDto.getNome(),
-                    pessoaDto.getDataNascimento(),
-                    (List<Endereco>) endereco.get());
-        }else {
-            return new Pessoa(pessoaDto.getNome(),
-                    pessoaDto.getDataNascimento(),
-                    null);
+                    pessoaDto.getDataNascimento());
         }
-    }
 
-
-    public Optional<Pessoa> buscarPessoa(Long pessoaId) {
-       return pessoaRepository.findById(pessoaId);
+    public Pessoa buscarPessoaPorId(Long pessoaId) {
+       Pessoa pessoa = pessoaRepository.findById(pessoaId).orElse(null);
+       return pessoa;
     }
 
     public List<Pessoa> buscarPessoas() {

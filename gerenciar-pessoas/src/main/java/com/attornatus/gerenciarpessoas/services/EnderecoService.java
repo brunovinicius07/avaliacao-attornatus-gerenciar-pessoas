@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -26,14 +27,6 @@ public class EnderecoService {
     @Transactional
     public Endereco cadastrarEndereco(EnderecoDto enderecoDto){
         Endereco endereco = enderecoRepository.save(converteObjetoDto(enderecoDto, pessoaRepository));
-        Optional<Pessoa> pessoa = pessoaRepository.findById(endereco.getPessoa().getId());
-        if (pessoa.isPresent()){
-            List<Endereco> listaDeEndereco = new ArrayList<>();
-            listaDeEndereco.add(endereco);
-            Pessoa pessoaEncontrada = pessoa.get();
-            pessoaEncontrada.setEndereco(listaDeEndereco);
-            pessoaRepository.save(pessoaEncontrada);
-        }
         return endereco;
     }
 
@@ -45,10 +38,26 @@ public class EnderecoService {
                             enderecoDto.getNumero(),
                             enderecoDto.getCidade(),
                             pessoa.get());
-
     }
 
-    public Optional<Endereco> buscarEndereco(Long pessoaId) {
-        return enderecoRepository.findById(pessoaId);
+    public Endereco buscarEnderecoPorId(Long id) {
+        Endereco endereco = enderecoRepository.findById(id).orElse(null);
+        return endereco;
+    }
+
+    public List<Endereco> buscarTodosEnderecos(){
+        return enderecoRepository.findAll();
+    }
+
+    public List<Endereco> buscarEnderecosPessoa(Long id){
+        Optional<Pessoa> pessoa = pessoaRepository.findById(id);
+        if(pessoa.isPresent()){
+            return enderecoRepository.findAll()
+                    .stream()
+                    .filter(e -> e.getPessoa().getId() == id)
+                    .collect(Collectors.toList());
+        }else{
+            return null;
+        }
     }
 }
