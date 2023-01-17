@@ -24,7 +24,7 @@
    * Informar endereço principal da pessoa
 
 ## 🧑🏽‍💻URL
-[http:\\localhost8080\pessoa](http://localhost:8080/pessoa)
+[http:\\localhost:8080\pessoa](http://localhost:8080/pessoa)
 
 ## 🛠️ Rests da API
 
