@@ -8,4 +8,5 @@ public class EnderecoDto {
     private String numero;
     private String cidade;
     private long pessoaId;
+    boolean enderecoPrincipal;
 }
