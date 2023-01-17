@@ -11,16 +11,17 @@
 ## ⚙️Funcionalidades
 
 **Pessoa**
-   * Criar Pessoa
-   * Editar Pessoa
-   * Buscar Pessoa
-   * Listar Pessoas
+   * Criar pessoa
+   * Editar pessoa
+   * Buscar pessoa
+   * Listar pessoas
    
 **Endereço**   
-   * Criar Endereço Para Pessoa
+   * Criar endereço para pessoa
    * Listar endereços das pessoas
    * Listar endereços da pessoa
    * Buscar endereço da pessoa
+   * Informar endereço principal da pessoa
 
 
 ## 🛠️Métodos
