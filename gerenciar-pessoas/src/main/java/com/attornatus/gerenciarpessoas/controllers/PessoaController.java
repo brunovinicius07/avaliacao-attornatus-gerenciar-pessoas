@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -39,7 +38,7 @@ public class PessoaController {
         return new ResponseEntity<Pessoa>(pessoaService.editarPessoa(pessoaDto, id), HttpStatus.OK);
     }
 
-    @GetMapping("/listarPessoas")
+    @GetMapping(value = "/listarPessoas")
     public ResponseEntity<List<Pessoa>> listarPessoa() {
         return new ResponseEntity<List<Pessoa>>(pessoaService.buscarPessoas(), HttpStatus.OK);
     }
