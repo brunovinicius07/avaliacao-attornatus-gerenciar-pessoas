@@ -13,14 +13,14 @@
 **Pessoa**
    * Criar Pessoa
    * Editar Pessoa
-   * Consultar Pessoa
+   * Buscar Pessoa
    * Listar Pessoas
    
 **Endereço**   
    * Criar Endereço Para Pessoa
-   * Listar Endereços
-   * Listar Endereços da Pessoa
-   * Buscar Endereço
+   * Listar endereços das pessoas
+   * Listar endereços da pessoa
+   * Buscar endereço da pessoa
 
 
 ## 🛠️Métodos
