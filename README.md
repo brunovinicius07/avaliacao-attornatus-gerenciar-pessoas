@@ -26,7 +26,7 @@
 
 ## 🛠️Métodos
 
-### 🧑🏽Pessoa Controller
+#### 🧑🏽Pessoa Controller
 | Rest  | URL             |Função |
 |-------|-----------------| ------- |
 | POST  | /cadastrarPessoa      | Criar pessoa |
@@ -35,7 +35,7 @@
 | GET   | /listarPessoas    | Listar pessoas |
 
 
-### 🏙️Endereço Controller
+#### 🏙️Endereço Controller
 
 |Rest | URL                         |Função |
 |------ |-----------------------------| ------- |
