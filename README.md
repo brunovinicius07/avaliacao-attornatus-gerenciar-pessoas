@@ -10,13 +10,13 @@
 
 ## ⚙️Funcionalidades
 
-**Pessoa**
+### 🧑🏽Pessoa
    * Criar pessoa
    * Editar pessoa
    * Buscar pessoa
    * Listar pessoas
    
-**Endereço**   
+### 🏙️Endereço   
    * Criar endereço para pessoa
    * Listar endereços das pessoas
    * Listar endereços da pessoa
