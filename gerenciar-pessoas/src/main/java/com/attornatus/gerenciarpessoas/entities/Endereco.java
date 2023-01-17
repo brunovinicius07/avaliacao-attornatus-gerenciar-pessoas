@@ -2,6 +2,7 @@ package com.attornatus.gerenciarpessoas.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.io.Serial;
@@ -34,11 +35,15 @@ public class Endereco implements Serializable {
     @ManyToOne
     private Pessoa pessoa;
 
-    public Endereco(String logradouro, int cep, String numero, String cidade, Pessoa pessoa) {
+    @NotNull
+    private Boolean enderecoPrincipal;
+
+    public Endereco(String logradouro, int cep, String numero, String cidade, Pessoa pessoa, Boolean enderecoPrincipal) {
         this.logradouro = logradouro;
         this.cep = cep;
         this.numero = numero;
         this.cidade = cidade;
         this.pessoa = pessoa;
+        this.enderecoPrincipal = enderecoPrincipal;
     }
 }
