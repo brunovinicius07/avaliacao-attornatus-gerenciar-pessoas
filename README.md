@@ -24,9 +24,9 @@
    * Informar endereço principal da pessoa
 
 ## 🧑🏽‍💻URL
-http:\\:localhost8080\pessoa
+http:\\localhost8080\pessoa
 
-## 🛠️Métodos
+## 🛠️ Rests da API
 
 #### 🧑🏽Pessoa Controller
 | Rest  | URL             |Função |
