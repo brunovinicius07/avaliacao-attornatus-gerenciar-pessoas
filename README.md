@@ -1,6 +1,6 @@
 #  Desafio Attornatus - Gerenciar Pessoas
 
-## 🖥️ Tecnologia utilizada
+## 🖥️ Tecnologia Utilizada
 
 * Spring Boot
 * Java 17
@@ -23,7 +23,7 @@
    * Buscar Endereço
 
 
-# 🛠️Métodos
+## 🛠️Métodos
 
 ### 🧑🏽Pessoa Controller
 | Rest  | URL             |Função |
