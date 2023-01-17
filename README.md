@@ -1,6 +1,6 @@
 #  Desafio Attornatus - Gerenciar Pessoas
 
-## 🖥️ Tecnologia Utilizada
+## 🖥️ Tecnologias Utilizadas
 
 * Spring Boot
 * Java 17
