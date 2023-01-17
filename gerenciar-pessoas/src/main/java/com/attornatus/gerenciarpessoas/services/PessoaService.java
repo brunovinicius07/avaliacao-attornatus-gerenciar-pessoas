@@ -1,16 +1,14 @@
 package com.attornatus.gerenciarpessoas.services;
 
 import com.attornatus.gerenciarpessoas.dtos.PessoaDto;
-import com.attornatus.gerenciarpessoas.entities.Endereco;
 import com.attornatus.gerenciarpessoas.entities.Pessoa;
 import com.attornatus.gerenciarpessoas.repositories.EnderecoRepository;
 import com.attornatus.gerenciarpessoas.repositories.PessoaRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PessoaService {
@@ -30,11 +28,10 @@ public class PessoaService {
     public Pessoa editarPessoa(PessoaDto pessoaDto, Long id){
         Pessoa pessoa = pessoaRepository.findById(id).orElse(null);
         if(pessoa == null){
-            //criar exception
+            throw new RuntimeException("Pessoa não encontrada");
         }
         pessoa.setNome(pessoaDto.getNome());
         pessoa.setDataNascimento(pessoaDto.getDataNascimento());
-
         pessoaRepository.save(pessoa);
         return pessoa;
     }
@@ -45,7 +42,10 @@ public class PessoaService {
 
     public Pessoa buscarPessoaPorId(Long pessoaId) {
        Pessoa pessoa = pessoaRepository.findById(pessoaId).orElse(null);
-       return pessoa;
+        if(pessoa == null){
+            throw new RuntimeException("Pessoa não encontrada");
+        }
+        return pessoa;
     }
 
     public List<Pessoa> buscarPessoas() {
