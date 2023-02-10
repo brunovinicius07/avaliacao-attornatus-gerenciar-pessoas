@@ -1,4 +1,4 @@
-#  Desafio Attornatus - Gerenciar Pessoas.
+#  Desafio Attornatus - Gerenciar Pessoas
 
 ## 🖥️ Tecnologias Utilizadas
 
